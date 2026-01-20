@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Whatsapp</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="grid.css" type="text/css">
+    <link rel="stylesheet" href="font/css/all.css" type="text/css">
+    <link rel="icon" href="images/desktopwa.jfif" type="image/x-icon">
+    <script defer src="waGrid.js"></script>
+
+<style>
+    /* Modal styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 10;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.5);
+      justify-content: center; align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      text-align: center;
+      min-width: 280px;
+    }
+    .modal-content button {
+      margin: 10px 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 200px;
+      border-radius: 5px;
+      border: 1px solid #0c8cf0;
+      background: #eaf4ff;
+      color: #0c8cf0;
+    }
+    .close-modal {
+      float: right;
+      font-size: 22px;
+      cursor: pointer;
+    }
+    #preview, #video, #captureBtn, #closeCamBtn {
+      display: none;
+      margin-top: 10px;
+    }
+    #preview {
+      max-width: 300px;
+    }
+    #video {
+      border: 1px solid #ddd;
+      width: 300px;
+      height: 225px;
+    }
+    #openModalBtn {
+        padding: 0;
+        margin: 0;
+        border: none;
+        background-color: white;
+        cursor: pointer;
+    }
+  </style>
+
+</head>
+<body>
+    <div id="gridcontainer">    
+        <div class="lside">
+            <div class="top">
+                <div class="ip">
+                  <i class="fa-solid fa-message"></i>
+                  <p>Chats</p>
+               </div>
+               <div class="ip">
+                  <i class="fa-solid fa-circle-notch"></i>
+                  <p>Updates</p>
+               </div>
+               <i class="fa-solid fa-bullhorn"></i>
+               <div class="ip">
+                  <i class="fa-solid fa-people-group"></i><hr>
+                  <p>Communities</p>
+                </div>
+                <div class="ip">
+                  <i class="fa-solid fa-phone"></i>
+                  <p>Calls</p>
+               </div>
+               <i class="META fa-regular fa-circle"></i>
+            </div>
+            <div class="down">
+               <i class="fa-solid fa-photo-film"></i>
+               <i class="fa-solid fa-gear"></i>
+               <i class="fa-solid fa-user"></i>
+            </div>
+        </div>
+        <div class="tmain">
+            <div class="top">
+                <h1>WhatsApp</h1>
+                <span class="menu">
+                    <!-- <i class="fa fa-camera"></i> -->
+                            <!-- Main Camera Icon/Button -->
+  <button id="openModalBtn"><i class="fa-solid fa-camera"></i></button>
+  
+  <!-- Modal Panel -->
+  <div class="modal" id="cameraModal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeModalBtn">&times;</span>
+      <h2>Send Photo</h2>
+      <button id="takePhotoBtn">Take a Photo</button><br>
+      <button id="uploadBtn">Upload from Gallery</button>
+      <br>
+      <!-- File input (hidden) -->
+      <input type="file" accept="image/*" id="fileInput" style="display:none;">
+      
+      <!-- Camera preview for getUserMedia -->
+      <video id="video" autoplay></video>
+      <br>
+      <button id="captureBtn">Capture</button>
+      <button id="closeCamBtn">Close Camera</button>
+      <br>
+      <img id="preview" />
+    </div>
+  </div>
+                    <i class="Adam fa fa-ellipsis-vertical">
+                        <div class="dropd">
+                            <div class="drop">New group</div>
+                            <div class="drop">New broadcast</div>
+                            <div class="drop">Linked devices</div>
+                            <div class="drop">Starred</div>
+                            <div class="drop">Read all</div>
+                            <div class="drop">Setting</div>
+                            <div class="drop">Switch account</div>
+                        </div>
+                    </i>
+                </span>
+            </div>
+            <div class="down1">
+                <form action="https://WWW.google.com" method="get">
+                    <input type="search" placeholder="Ask Meta AI or Search">
+                    <i class="fa fa-search"></i>
+                </form>
+            </div>
+            <div class="down2">
+                <form action="https://WWW.google.com" method="get">
+                    <input type="search" placeholder="Ask Meta AI or Search">
+                </form>
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+        <div class="main">
+            <div class="categories">
+                    <div class="category" style="background-color: rgb(190, 252, 190);">All</div>
+                    <div class="category">Unread</div>
+                    <div class="category">Favourite</div>
+                    <div class="category">Groups</div>
+                </div>
+           <div class="chat">
+                <img src="chats/1.jpg" alt="profile photo"><p>+2347088797472</p>
+                <div class="Lchat">
+                  <p class="LC" style="color: green;">5:00 am</p>
+                </div>
+            </div>
+            <div class="chat">
+                <img src="chats/10.jpg" alt="profile photo"><p>Sulaiman</p>
+                <div class="Lchat">
+                  <p class="LC">01:21 PM</p>
+                  <div class="count">9</div>
+                </div>
+            </div>
+            <div class="chat">
+                <img src="chats/11.jpg" alt="profile photo"><p>Muhsin</p>
+                <div class="Lchat">
+                  <p class="LC">Yesterday</p>
+                  <div class="count">32</div>
+                </div>
+            </div>
+            <div class="chat">
+                <img src="chats/12.jpg" alt="profile photo"><p>Jhon Doe</p>
+                <div class="Lchat">
+                  <p class="LC">12:00 AM</p>
+                  <div class="count">1</div>
+                </div>
+            </div>
+            <div class="chat">
+                <img src="chats/13.jpg" alt="profile photo"><p>Ashana</p>
+                <div class="Lchat">
+                  <p class="LC">07:11 AM</p>
+                  <div class="count">24</div>
+                </div>
+            </div>
+             <div class="chat">
+                <img src="chats/2.jpg" alt="profile photo"><p>Litisha</p>
+                <div class="Lchat">
+                  <p class="LC">05:00 PM</p>
+                  <div class="count">71</div>
+                </div>
+            </div>
+            <div class="chat">
+                <img src="chats/3.jpg" alt="profile photo"><p>Little Eysha</p>
+                <div class="Lchat">
+                  <p class="LC">9/10/2025</p>
+                  <div class="count">11</div>
+                </div>
+            </div>
+            <div class="chat">
+                <img src="chats/4.jpg" alt="profile photo"><p>Amna Edris</p>
+                <div class="Lchat">
+                  <p class="LC">3/11/2025</p>
+                  <div class="count">100</div>
+                </div>
+            </div>
+            <div class="chat">
+                <img src="chats/5.jpg" alt="profile photo"><p>Malam Aikai</p>
+                <div class="Lchat">
+                  <p class="LC">21/5/2024</p>
+                  <div class="count">73</div>
+                </div>
+            </div>
+            <div class="chat">
+                <img src="chats/6.jpg" alt="profile photo"><p>Ghazi Baba</p>
+                <div class="Lchat">
+                  <p class="LC">7/09/2025</p>
+                  <div class="count">21</div>
+                </div>
+            </div>
+            <div class="chat">
+                <img src="chats/7.jpg" alt="profile photo"><p>Ummaneey</p>
+                <div class="Lchat">
+                  <p class="LC">23/12/2024</p>
+                  <div class="count">31</div>
+                </div>   
+            </div>
+            <div class="chat">
+                <img src="chats/8.jpg" alt="profile photo"><p>My Grace</p>
+                <div class="Lchat">
+                  <p class="LC">11/11/2024</p>
+                  <div class="count">15</div>
+                </div>
+            </div>
+            <div class="chat">
+                <img src="chats/9.jpg" alt="profile photo"><p>Ibnikamis</p>
+                <div class="Lchat">
+                  <p class="LC">8/02/2005</p>
+                  <div class="count">37</div>
+                </div>
+            </div>
+            <div class="empty">
+                <p>
+                    <i class="fa-solid fa-lock"></i>
+                    <!-- <i class="fa fa-lock"></i> -->
+                       Your personal messages are 
+                       <code>end-to-end encrypted</code>
+                </p>
+                <div class="pic">
+                   <img src="images/meta.jpeg" alt="Meta ai search">
+                   <img src="images/plus.jfif" alt="add contact">
+                </div>
+            </div>
+        </div>
+        <!-- <div class="bmain">bottom</div> -->
+        <div class="rside">
+            <div class="rmain">
+                <img src="images/Second.png" alt="Green Laptop">
+                <h1>Download WhatsApp For Windows</h1>
+                <p>Make calls, share your screen and get a faster experience when
+                    you download the Windows App
+                </p>
+                <form action="download">
+                    <input type="submit" value="download">
+                </form>
+            </div>
+            <div class="rp">
+                <p>
+                    <i class="fa fa-lock"></i>Your personal messages are
+                    <code>end-to-end encrypted</code>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
