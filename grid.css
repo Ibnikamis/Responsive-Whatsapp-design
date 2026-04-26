@@ -461,7 +461,7 @@ div.count {
     }
     .pic {
         position: fixed;
-        top: 438px;
+        top: 370px;
         right: 3%;
         display: block;
     }
@@ -470,8 +470,11 @@ div.count {
         width: 35px;
         margin-top: 3px;
         display: block;
-        border-radius: 17px;
         margin-left: 9px;
+
+    }
+    .pic img:nth-child(1):hover,.pic img:nth-child(2):hover {
+        background-color: rgb(211, 209, 209);
     }
     .pic img:nth-child(2) {
         width: 57px;
